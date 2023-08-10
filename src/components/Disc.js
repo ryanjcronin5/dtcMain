@@ -96,8 +96,9 @@ export default function Disc(){
             </div>
             <hr className="w-full mt-8 md:h-2" alt="hr" />
             <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-5 first:pt-0 last:mb-0">
-
+                <DiscCard/>
             </div>
+            <hr className="w-full mt-8 md:h-3" alt="hr" />
         </div>
     )
 }
