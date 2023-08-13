@@ -28,13 +28,13 @@ export default function Current(){
                     <CurrentCard 
                         name="Javascript" 
                         subtitle="ECMAScript 2022" 
-                        content="JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries." 
+                        content="JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behaviour, often incorporating third-party libraries." 
                         img={javascript}
                     />
                     <CurrentCard 
                         name="Python" 
                         subtitle="3.11.2" 
-                        content="Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming." 
+                        content="Python is a high-level, general-purpose programming language. Its design philosophy emphasises code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming." 
                         img={python}
                     />
                     <CurrentCard
@@ -46,17 +46,15 @@ export default function Current(){
                     <CurrentCard
                         name="C#"
                         subtitle="11.0"
-                        content="C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented and component-oriented programming. C# can be used for mobile or desktop apps, cloud-based services, website and more."
+                        content="C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented and component-oriented programming. C# can be used for mobile or desktop apps, cloud-based services, websites and more."
                         img={csharp}
                     />
                     <CurrentCard
                         name="SQL"
                         subtitle="Microsoft SQL Server 2022"
-                        content="Structured Query Language allows programmers to access and manipulate databases. Typically used alongside Apache or PHP, the simple and standardized syntax is very appealing to programmers."
+                        content="Structured Query Language allows programmers to access and manipulate databases. Typically used alongside Apache or PHP, the simple and standardised syntax is very appealing to programmers."
                         img={sql}
                     />
-                    
-
                 </Slider>
             </div>
             <hr className="w-full mt-8 md:h-2" alt="hr" />

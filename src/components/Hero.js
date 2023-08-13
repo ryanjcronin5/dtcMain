@@ -31,7 +31,7 @@ export default function Hero () {
                 
                 <ul className='flex mt-2 gap-4 items-center'>
                    <li>
-                        <a href='' rel="noreferrer" target="_blank"><FontAwesomeIcon size='2xl' icon={faGithub} /></a>
+                        <a href='https://github.com/ryanjcronin5/dtcMain' rel="noreferrer" target="_blank"><FontAwesomeIcon size='2xl' icon={faGithub} /></a>
                    </li> 
                 </ul>
             </div>

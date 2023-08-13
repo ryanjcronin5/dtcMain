@@ -7,11 +7,12 @@ export default function Navbar() {
             <img src={logo} className="App-logo w-10 rounded-full" alt="logo" />
             <ul className="hidden md:flex">
             <li className="p-4"><a href="#home" className="hover:underline">About</a></li>
-            <li className="p-4"><a href="#ground" className="hover:underline">Languages</a></li>
-            <li className="p-4"><a href="#current" className="hover:underline">Development</a></li>
-            <li className="p-4"><a href="#disc" className="hover:underline"></a>Discussion</li>
+            <li className="p-4"><a href="#ground" className="hover:underline">Low Level Languages</a></li>
+            <li className="p-4"><a href="#current" className="hover:underline">Current Languages</a></li>
+            <li className="p-4"><a href="#prog" className="hover:underline">Programming Languages</a></li>
+            <li className="p-4"><a href="#llm" className="hover:underline">Large Language Models</a></li>
             </ul>
-            <a rel="noreferrer" target="_blank" className=" bg-teal-500 rounded-full px-4 py-1 border border-teal-800 border border-4">Database</a>
+            <a href="#form" rel="noreferrer" className="bg-teal-500 rounded-full px-4 py-1 border-teal-800 border-4">Contact Us</a>
         </div>
     </div>
     )
