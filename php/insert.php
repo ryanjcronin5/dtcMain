@@ -1,13 +1,9 @@
 <?php
 
 include './php/conn.php';
-const cors = require('cors');
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
-    optionSuccessStatus: 200
-}
-app.use(cors(corsOptions));
+header('Access-Control-Allow-Headers: accept');
+header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Methods: GET, POST');
 $user = $_POST['full_name'];
 echo ("Hello from server: $user");
 

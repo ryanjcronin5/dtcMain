@@ -16,8 +16,8 @@ export default function DiscCard(props){
             data-aos="fade-up" 
             data-aos-duration="500" 
             data-aos-offset="100" 
-            className="hover:bg-dark w-fit h-fit bg-dark-200 rounded-md py-4 px-4 flex-grow">
-            <div className="mt-2">
+            className="hover:bg-dark w-fit h-fit bg-dark-200 rounded-md py-4 px-4 m-4 flex-grow">
+            <div>
                 <h1 ref={h1Ref} className="font-bold md:text-xl">{props.title}</h1>
                 <p className="mt-1 whitespace-pre-wrap font-light text-justify md:text-lg">{props.subtitle}</p>
                 <ul className="list-decimal list-inside mt-2">

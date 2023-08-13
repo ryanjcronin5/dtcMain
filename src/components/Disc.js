@@ -3,7 +3,7 @@ import DiscCard from "./DiscCard.js"
 export default function Disc(){
     return (
         <div id="disc" className="mt-4 text-white">
-            <h1 className="text-2xl font-bold">Discussion</h1>
+            <h1 className="text-2xl font-bold">Programming Languages</h1>
             <p className="font-light text-gray-400">Subtitle idk</p>
 
             <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-5 first:pt-0 last:mb-0">
@@ -25,7 +25,7 @@ export default function Disc(){
                     li6Text="With the continuous development of programming languages, businesses and developers face decisions about adopting new languages or sticking with existing ones. This choice can have long-term implications for software maintenance and support."
                     textOut="In essence, programming language development significantly influences how software is designed, implemented, and maintained, shaping the technological landscape and influencing the strategies and decisions of developers and organizations."
                 />
-                <DiscCard className="hover:"
+                <DiscCard
                     title="The responsibilities of technologists in programming language development"
                     subtitle="Technologists engaged in programming language development bear critical responsibilities that extend beyond code creation. Their decisions have profound implications for the developer community, industry standards, and the overall technology landscape."
                     li1="Usability and Accessibility"
@@ -63,7 +63,7 @@ export default function Disc(){
                     title="How the consequences of the development has influenced the responsibilities of technologists"
                     subtitle="The consequences of technological development have significantly reshaped the responsibilities of technologists, placing them at the forefront of addressing new challenges and ethical considerations that arise from innovation. As technology becomes increasingly integrated into society, technologists are tasked with a broader range of duties that extend beyond technical proficiency."
                     li1="Ethical Considerations"
-                    li1Text="Technologists must now navigate complex ethical dilemmas related to privacy, data security, algorithmic bias, and the potential societal impact of their creations.    "
+                    li1Text="Technologists must now navigate complex ethical dilemmas related to privacy, data security, algorithmic bias, and the potential societal impact of their creations."
                     li2="Sustainability and Environmental Impact"
                     li2Text="With growing awareness of environmental concerns, technologists are responsible for developing sustainable solutions and minimizing the ecological footprint of their technologies."
                     li3="User-Centered Design"
@@ -95,8 +95,71 @@ export default function Disc(){
                 />
             </div>
             <hr className="w-full mt-8 md:h-2" alt="hr" />
+            <h1 className="text-2xl font-bold">Large Language Models</h1>
+            <p className="mt-2 font-light text-lg text-gray-400">
+                Large language models are essentially 'next word predictors', which use an algorithm to predict the next word of text, based on what it has already seen. This uses pre-trained data that analyses the text to predict the most likely answer based on probability. Then it continues to do this until the answer is complete.
+            </p>
+            
             <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-5 first:pt-0 last:mb-0">
-                <DiscCard/>
+                <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" className="hover:bg-dark w-fit h-fit bg-dark-200 rounded-md py-4 px-4 m-4 flex-grow">
+                    <p className="font-normal md:text-lg">
+                        An LLM uses machine-learning natural language processing, NLP, to be trained. This is done by feeding the model with data input and output sets. Information is read, or content entered, and the output is based on what the algorithm predicts the next word will be. The input could be proprietary private data, or in the case of OpenAI chatbots like ChatGPT, whatever data is fed and found off of the internet.
+                    </p>
+                    <p className="mt-2 font-normal md:text-lg">
+                        Language models have been present since 1966 with the release of ELIZA. ELIZA, an early chatbot, is often used as a cautionary tale in the discussion of AI, symbolising the scepticism that surrounds their capabilities. While historically relevant, it differs significantly from modern AI developments like LLMs. ELIZA's deterministic approach differs with the stochastic nature of LLMs, which utilise complex innovations such as deep learning and transformers. The chatbot revealed that humans tend to assign intelligence to nin-intelligent systems due to our limited understanding. All in all, ELIZA's significance lies in its historical context, underlining the challenges of defining consciousness with the field of cutting edge AI.  
+                    </p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" className="hover:bg-dark w-fit h-fit bg-dark-200 rounded-md py-4 px-4 m-3 flex-grow">
+                    <p className="font-normal md:text-lg">
+                        There are many challenges and implications associated with large language models, particularly related to biases, training data and prompt engineering.
+                    </p>
+                    <p className="mt-2 font-normal md:text-lg">
+                        LLMs, such as ChatGPT, can hold biases based on the data they've ingested from the internet and developers. These biases, even if not intentional, can lead to gender or other forms of bias in responses, which can have real-world consequences if used in applications, such as hiring processes.
+                    </p>
+                    <p className="mt-2 font-normal md:text-lg">
+                        LLMs are trained on massive amounts of data from various sources to produce human-like responses. However, there is push towards customising these models for specific tasks to reduce their reliance on vast datasets. An example of this is Google's PaLM 2 LLM, which uses more specific training data for advanced tasks.
+                    </p>
+                    <p className="mt-2 font-normal md:text-lg">
+                        Prompt engineering is the process of creating and optimising text prompts to guide LLMs' responses towards desired outcomes. This is becoming an essential skill for IT and business professionals who want to tailor LLMs to their specific industries or organisations, leading to a need for prompt guides and possibly marketplaces for prompts.
+                    </p>
+                    <p className="mt-2 font-normal md:text-lg">
+                        While larger LLMs can be expensive and resource-intensive to train, there is a growing understanding that smaller models trained on specific or targeted datasets can perform just as well or even better in these tasks, offering accuracy and cost advantages.
+                    </p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" className="hover:bg-dark w-fit h-fit bg-dark-200 rounded-md py-4 px-4 m-3 flex-grow">
+                    <p className="font-normal md:text-lg">
+                        Large language models have become a dominant way to build AI systems, though these have been primarily used in English markets, leaving the world's other 7,000 languages left behind. Due to the English market for this tool being considered larger than other languages, development of English based systems have been the focus. Though one company has put their hat in the ring and developed BLOOM, BigScience Large Open-science Open-access Multilingual Language Model. BLOOM has 176 billion parameters, and is able to generate text in 46 natural languages and 13 programming languages. By having models that can aid different languages, the door is opened to allow more collaboration between languages and geographical groups.
+                    </p>
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row flex-wrap mt-4 gap-5">
+            <DiscCard
+                title="Ethical issues for large language models"
+                li1="Hallucination"
+                li1Text="The tendency to produce false or misleading information using their internal patterns and biases."
+                li2="Emergent behaviors"
+                li2Text="The possibility of formulating prolonged plans, pursuing undefined objectives, and striving to acquire authority or additional resources."
+                li3="Misuse"
+                li3Text="The potential for generating convincing text that can be used for nefarious purposes, such as disinformation campaigns or online harassment."
+                li4="Responsibility"
+                li4Text="The difficultly of assigning accountability and liability for the outputs generated by large language models."
+                li5="Risks of harm"
+                li5Text="The various social and ethical harms that can result from the use of large language models, such as bias, discrimination, privacy violation and manipulation."
+                li6="Education"
+                li6Text="The practical and ethical challenges of using large language models in education settings, such as quality assurance, pedagogical alignment and feedback provision."
+            />
+            <DiscCard
+                title="There can be bias in large language models"
+                subtitle="Bias is the tendency to favour or disfavour certain groups, individuals, or attributes over others, based on stereotypes or prejudices. Bias can affect the quality, fairness, and trustworthiness of the outputs generated by large language models. Bias can creep into large language models from various sources, such as:"
+                li1="Training data"
+                li1Text=""
+                li2="Model specifications"
+                li2Text=""
+                li3="Algorithmic constraints"
+                li3Text=""
+                li4="Product design"
+                li4Text=""
+            />
             </div>
             <hr className="w-full mt-8 md:h-3" alt="hr" />
         </div>
