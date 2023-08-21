@@ -7,18 +7,42 @@ import qBasic from "../assets/ground/qbasic.png"
 import asm from "../assets/ground/asm.png"
 import scheme from "../assets/ground/scheme.png"
 import pascal from "../assets/ground/pascal.png"
+import { useState, useEffect } from 'react';
 
 export default function Ground() {
-    const settings = {
+    const [slidesToShow, setSlidesToShow] = useState(2);
+    const [autoPlay, setautoplay] = useState(true);
+
+    function scaleWidth(x) {
+        if (x.matches) {
+            setSlidesToShow(1);
+            setautoplay(false);
+        } else {
+            setSlidesToShow(2);
+            setautoplay(true);
+        }
+    }
+
+    useEffect(() => {
+        var x = window.matchMedia("(max-width: 700px)");
+        x.addEventListener('change', scaleWidth);
+        scaleWidth(x);
+
+        return () => {
+            x.removeEventListener('change', scaleWidth);
+        };
+    }, []);
+
+    var settings = {
         dots: false,
-        autoplay: true,
+        autoplay: autoPlay,
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1
-      };
+    };
 
     return (
-        <div id="ground" className="mt-4 text-white">
+        <div id="ground" className="mt-4 text-white scroll-my-24">
             <h1 className="text-2xl font-bold">Low Level programming languages</h1>
             <p className="font-light text-gray-400">Mainly outdated now, but they laid the groundwork for what was to come.</p>
 

@@ -1,25 +1,49 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import CurrentCard from "./CurrentCard.js"
+import CurrentCard from "./CurrentCard.js";
+import { useState, useEffect } from 'react';
 
-import javascript from "../assets/current/javascript.svg"
-import python from "../assets/current/python.svg"
-import html from "../assets/current/html.svg"
-import csharp from "../assets/current/csharp.svg"
-import sql from "../assets/current/sql.jpg"
+import javascript from "../assets/current/javascript.svg";
+import python from "../assets/current/python.svg";
+import html from "../assets/current/html.svg";
+import csharp from "../assets/current/csharp.svg";
+import sql from "../assets/current/sql.jpg";
 
-export default function Current(){
-    const settings = {
+export default function Current() {
+    const [slidesToShow, setSlidesToShow] = useState(2);
+    const [autoPlay, setautoplay] = useState(true);
+
+    function scaleWidth(x) {
+        if (x.matches) {
+            setSlidesToShow(1);
+            setautoplay(false);
+        } else {
+            setSlidesToShow(2);
+            setautoplay(true);
+        }
+    }
+
+    useEffect(() => {
+        var x = window.matchMedia("(max-width: 700px)");
+        x.addEventListener('change', scaleWidth);
+        scaleWidth(x);
+
+        return () => {
+            x.removeEventListener('change', scaleWidth);
+        };
+    }, []);
+
+    var settings = {
         dots: false,
-        autoplay: true,
+        autoplay: autoPlay,
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1
-      };
+    };
 
     return (
-        <div id="current" className="mt-4 text-white">
+        <div id="current" className="mt-4 text-white scroll-my-24">
             <h1 className="text-2xl font-bold">Current Programming Languages</h1>
             <p className="font-light text-gray-400">The following is a list of vital programming languages used in the modern world.</p>
 

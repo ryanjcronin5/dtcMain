@@ -17,15 +17,15 @@ export default function Hero () {
             :
             null
         }
-        <div id="home" className="flex w-full h-screen flex-col md:flex-row gap-5 items-center justify-center text-white relative">
-            <div className='md:w-3/6 md:p-4'>
+        <div id="home" className="flex w-full h-screen flex-col md:flex-row gap-5 items-center justify-center text-white relative snap-both">
+            <div className='md:w-3/6 md:p-4 snap-start'>
                 <img data-aos="flip-right" data-aos-duration="1500" data-aos-offset="200"  src={profile} alt="profile" onLoad={() => setLoaded(false)} />
             </div>
             <div className='md:w-3/6' data-aos="fade-right" data-aos-duration="1000" data-aos-offset="100" >
                 <div className="flex flex-col w-full mt-8">
                     <h1 className="text-xl text-gray-400">The Development of</h1>
                     <h1 className="text-2xl font-bold">Programming Languages & Large Language Models</h1>
-                    <p class="text-xl font-bold text-gray-300">Discussing the consequences, responsibilities and challenges involved.</p>
+                    <p className="text-xl font-bold text-gray-300">Discussing the consequences, responsibilities and challenges involved.</p>
                     <p className="text-md font-light text-gray-400 ">Also will explore how large language models fitness for purpose may be broadly interpreted by users, engineers and clients.</p>
                 </div>
                 
