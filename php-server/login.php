@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     $response = ['message' => 'Invalid request'];
 }
-
 echo json_encode($response);
 $conn->close();
 ?>

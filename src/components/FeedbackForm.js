@@ -7,54 +7,12 @@ export default function FeedbackForm() {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [result, setResult] = useState("");
-
     const isFormFilled = fullname && email && subject && message;
-    
-    const handleFullNameChange = (e) => {
-        setFullName(e.target.value);
-    };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handleSubjectChange = (e) => {
-        setSubject(e.target.value);
-    };
-
-    const handleMessageChange = (e) => {
-        setMessage(e.target.value);
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!isFormFilled) {
-            alert("Please fill in all fields before submitting.");
-            return;
-        }
-
-        const form = e.target;
-        try {
-            const response = await fetch(form.action, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: new URLSearchParams(new FormData(form)),
-            });
-            if (response.ok) {
-                const data = await response.text();
-                setResult(data);
-                alert("Thank you, your message has been sent.");
-                console.log(result);
-            } else {
-                console.error("Error:", response.status, response.statusText);
-            }
-        } catch (error) {
-            console.error("Error submitting the form:", error);
-        }
-    };
+    const handleFullNameChange = (e) => {setFullName(e.target.value);};
+    const handleEmailChange = (e) => {setEmail(e.target.value);};
+    const handleSubjectChange = (e) => {setSubject(e.target.value);};
+    const handleMessageChange = (e) => {setMessage(e.target.value);};
+    const handleSubmit = async (e) => {e.preventDefault(); if (!isFormFilled) {alert("Please fill in all fields before submitting."); return;} const form = e.target; try {const response = await fetch(form.action, {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded",}, body: new URLSearchParams(new FormData(form)),}); if (response.ok) {const data = await response.text(); setResult(data); alert("Thank you, your message has been sent."); console.log(result);} else {console.error("Error:", response.status, response.statusText);}} catch (error) {console.error("Error submitting the form:", error);}};
     
     return (
         <div id="form" className="mt-4 text-white">
@@ -63,10 +21,7 @@ export default function FeedbackForm() {
                     <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contact Us</h2>
                         <p className="mb-2 font-light text-center text-gray-300 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Let us know.</p>
-                        <p className="mb-8 lg:mb-16 font-light text-center text-gray-300 sm:text-xl">
-                            Also, sign in to see feedback you've given.
-                            <Link to="/login" className="bg-gray-700 rounded-full md:whitespace-nowrap mx-2 px-4 py-0.5 border-dark-400 border-4">Login</Link>
-                        </p>
+                        <p className="mb-8 lg:mb-16 font-light text-center text-gray-300 sm:text-xl">Also, sign in to see feedback you've given.<Link to="/login" className="bg-gray-700 rounded-full md:whitespace-nowrap mx-2 px-4 py-0.5 border-dark-400 border-4">Login</Link></p>
                         
                         <form action="http://localhost:8000/insert.php" method="post" onSubmit={(event) => handleSubmit(event)} className="space-y-8">
                             <div>

@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Home';
 import LoginForm from './components/LoginForm';
 
-
 function App() {
   	useEffect(() => {
       	document.title = 'Software Development';
@@ -19,7 +18,6 @@ function App() {
 				<Route path="login" element={<LoginForm/>} />
 			</Routes>
 		</BrowserRouter>
-  		
   	);
 }
 

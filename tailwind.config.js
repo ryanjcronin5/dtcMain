@@ -45,6 +45,15 @@ module.exports = {
         '120' : "30rem"
       }
     },
+    keyframes: {
+      pulse: {
+        '0%, 100%': { opacity: '1' },
+        '50%': { opacity: '0.5' },
+      },
+    },
+    animation: {
+      pulse: 'pulse 3s infinite',
+    },
   },
   plugins: [],
 }

@@ -26,8 +26,6 @@ if ($result->num_rows > 0) {
         $feedbackData[] = $row;
     }
 }
-
 echo json_encode($feedbackData);
-
 $conn->close();
 ?>

@@ -12,34 +12,9 @@ import { useState, useEffect } from 'react';
 export default function Ground() {
     const [slidesToShow, setSlidesToShow] = useState(2);
     const [autoPlay, setautoplay] = useState(true);
-
-    function scaleWidth(x) {
-        if (x.matches) {
-            setSlidesToShow(1);
-            setautoplay(false);
-        } else {
-            setSlidesToShow(2);
-            setautoplay(true);
-        }
-    }
-
-    useEffect(() => {
-        var x = window.matchMedia("(max-width: 700px)");
-        x.addEventListener('change', scaleWidth);
-        scaleWidth(x);
-
-        return () => {
-            x.removeEventListener('change', scaleWidth);
-        };
-    }, []);
-
-    var settings = {
-        dots: false,
-        autoplay: autoPlay,
-        infinite: true,
-        slidesToShow: slidesToShow,
-        slidesToScroll: 1
-    };
+    function scaleWidth(x) {if (x.matches) {setSlidesToShow(1); setautoplay(false);} else {setSlidesToShow(2); setautoplay(true);}}
+    useEffect(() => {var x = window.matchMedia("(max-width: 700px)"); x.addEventListener('change', scaleWidth); scaleWidth(x); return () => {x.removeEventListener('change', scaleWidth);};}, []);
+    var settings = {dots: false, autoplay: autoPlay, infinite: true, slidesToShow: slidesToShow, slidesToScroll: 1};
 
     return (
         <div id="ground" className="mt-4 text-white scroll-my-24">
@@ -48,30 +23,10 @@ export default function Ground() {
 
             <div className="mt-4">
                 <Slider {...settings}>
-                    <LangCard 
-                        name="qBasic" 
-                        subtitle="An IDE first appeared in 1991." 
-                        content="QBasic is an integrated development environment and interpreter for a variety of dialects of BASIC which are based on QuickBASIC. Code entered into the IDE is compiled to an intermediate representation, and this IR is immediately executed on demand within the IDE." 
-                        img={qBasic} 
-                    />
-                    <LangCard
-                        name="Assembly"
-                        subtitle="The assembler language is the symbolic programming."
-                        content="Assembly language is often referred to simply as Assembly and commonly abbreviated as ASM. ASM is any low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions."
-                        img={asm}
-                    />
-                    <LangCard
-                        name="Scheme"
-                        subtitle="A dialect of the Lisp programming language family."
-                        content="Scheme is a classic programming language, emphasising functional programming and domain-specific languages. Known for its clean and minimalist design, Scheme is one of the longest-lived and best-studied dynamic languages."
-                        img={scheme}
-                    />
-                    <LangCard
-                        name="Pascal"
-                        subtitle="Pascal often comes under attack as a language which should be dead."
-                        content="Pascal is a very clean programming language, which looks more like real languages in the sense that it uses real English words as keywords rather than random ASCII characters. This is important in understanding existing code as well as debugging because people do not read individual characters but whole words."
-                        img={pascal}
-                    />
+                    <LangCard name="qBasic" subtitle="An IDE first appeared in 1991." content="QBasic is an integrated development environment and interpreter for a variety of dialects of BASIC which are based on QuickBASIC. Code entered into the IDE is compiled to an intermediate representation, and this IR is immediately executed on demand within the IDE." img={qBasic}/>
+                    <LangCard name="Assembly" subtitle="The assembler language is the symbolic programming." content="Assembly language is often referred to simply as Assembly and commonly abbreviated as ASM. ASM is any low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions." img={asm}/>
+                    <LangCard name="Scheme" subtitle="A dialect of the Lisp programming language family." content="Scheme is a classic programming language, emphasising functional programming and domain-specific languages. Known for its clean and minimalist design, Scheme is one of the longest-lived and best-studied dynamic languages." img={scheme}/>
+                    <LangCard name="Pascal" subtitle="Pascal often comes under attack as a language which should be dead." content="Pascal is a very clean programming language, which looks more like real languages in the sense that it uses real English words as keywords rather than random ASCII characters. This is important in understanding existing code as well as debugging because people do not read individual characters but whole words." img={pascal}/>
                 </Slider>
             </div>
             <hr className="w-full mt-8 md:h-3" alt="hr" />
